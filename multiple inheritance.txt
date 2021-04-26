@@ -1,0 +1,44 @@
+namespace ConsoleApp6.Properties
+{
+    interface I1
+    {
+        void myMethod();
+    }
+    interface I2
+    {
+        void myMethod();
+    }
+    interface I3
+    {
+        void myMethod();
+    }
+    class MultipleInhertance : I1, I2 ,I3
+    {
+        void I1.myMethod()
+        {
+            Console.WriteLine("Hello I am Interface-1 Method");
+        }
+        void I2.myMethod()
+        {
+            Console.WriteLine("Hello I am Interface-2 Method");
+        }
+        void I3.myMethod()
+        {
+            Console.WriteLine("Hello I am Interface-3 Method");
+        }
+    }
+    public class Client
+    {
+        public static void Main()
+        {
+            MultipleInhertance Obj1 = new MultipleInhertance();
+            I1 Interface1 = Obj1;
+            Interface1.myMethod();
+            I2 Interface2 = Obj1;
+            Interface2.myMethod();
+            I3 Interface3 = Obj1;
+            Interface3.myMethod();
+            Console.ReadLine();
+        }
+
+    }
